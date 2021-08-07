@@ -1,0 +1,70 @@
+<div class="container">
+                    
+        <!-- start form part-->
+        <div style="height: 700px;" class=" mt-5 formpart ">
+            <div class="text-center pt-3">
+                <h5>Update resourse </h5>
+            </div>
+
+                <!-- <div  class="alert alert-success" role="alert">
+                    Resourse uploaded done!!
+                </div> -->
+            <form  [formGroup]='updateresourse' (ngSubmit)="FormData()">
+                <div class="row">
+                    <div class="uploadresourse-brdr w-100">
+                    </div>
+                    <div class="container mt-3">
+                        <div class="slectsize col-md-12" >
+                            <select (change)='domainChange($event, resourceDetails.title, resourceDetails.desc, resourceDetails.keywords)' formControlName="domainID" name="domainID" [(ngModel)]='resourceDetails.domainID' class="custom-select ">
+                                <option disabled [value]='-1'>select your domain</option>
+                                <option *ngFor ='let domain of domainList' [value]="domain._id">{{domain.title}}</option>
+                            </select>
+                        </div>
+                    </div>
+            
+                    <div class="container my-3">
+                        <div class="slectsize col-md-12" >
+                            <select  (change)='courseChange($event, resourceDetails.domainID, resourceDetails.title, resourceDetails.desc, resourceDetails.keywords)' formControlName="courseID" name="courseID" [(ngModel)]='resourceDetails.courseID' class="custom-select ">
+                                <option disabled [value]='-1'>select your course</option>
+                                <option *ngFor ='let course of courseListOfDomainIDwithoutChange' [value]="course._id">{{course.title}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container mb-3">
+                        <div class="slectsize col-md-12" >
+                            <select  formControlName="lessonID" name="lessonID" [(ngModel)]='resourceDetails.lessonID' class="custom-select ">
+                                <option  [value]='null'>select your lesson</option>
+                                <option  *ngFor ='let lesson of lessonListOfDomainID' [value]="lesson._id">{{lesson.title}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group pl-3 pr-3">
+                    <label for="formGroupExampleInput">Resourse title</label>
+                    <input [(ngModel)]='resourceDetails.title' formControlName="title" type="text" class="form-control" id="formGroupExampleInput" >
+                </div>
+                <div class="form-group pl-3 pr-3">
+                    <label for="inputPassword" class=" col-form-label">keywords:</label>
+                    <input  [(ngModel)]='resourceDetails.keywords' formControlName="keywords" class="form-control" type="text" >  
+                </div>
+                <div class="form-group pl-3 pr-3">
+                    <label for="formGroupExampleInput2">Resourse description</label>
+                    <input [(ngModel)]='resourceDetails.desc' formControlName="desc" type="text" class="form-control" id="formGroupExampleInput2" >
+                </div>
+                <div class="form-group pl-3 pr-3">
+                    <label for="formGroupExampleInput2">Manage resource</label>
+                    <div class="custom-file">
+                        <!-- <input type="file" class="custom-file-input" id="customFile"> -->
+                        <label class="custom-file-label" for="customFile">{{getResource}}</label>
+                        <input    name='resource'  formControlName="resource" (change)='uploadresource($event)' type="file"  class="form-control" id="customFile" />
+                      </div>
+                      <button class="btn btn-info float-right mr-3 my-5">Submit</button>
+                </div>
+
+        </form>
+        <!-- end form part-->
+        </div>
+
+        <!-- start form part-->
+
+</div>

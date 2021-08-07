@@ -1,0 +1,59 @@
+
+        <!--start navbar-->
+  <!-- Header-->
+  <header class=" vh-100  ">
+        <!-- navbar -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent container">
+            <a class="main-colour navbar-brand" routerLink='/home'>LOGO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div *ngIf="!_AuthService.isLoggedIn()"  class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <div class="line"> </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/login'>Log in</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/signup'>Register</a>
+                    </li>
+                </ul>
+            </div>
+            <div *ngIf="_AuthService.isLoggedIn()" class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul  class="navbar-nav ml-auto">
+                    <i  class="fas fa-upload search-icon "></i>
+                    <li class="nav-item mr-5">
+                        <a class="nav-link" routerLink='/upload'> Upload resourse</a>
+                    </li>
+
+        
+                    <i class="fas fa-user-circle icon"></i>
+        
+                    <div class="dropdown mt-2">
+                        <a class="bg-transparent text-dark nav-item border-0 btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{decoded?.userName}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <a class="dropdown-item" [routerLink]="['/account', decoded.user_id]" >My account</a>
+                          <a class="dropdown-item" routerLink='/accountSettings' >Account Settings</a>
+                          <a class="dropdown-item" (click)='logout()' routerLink='/login'>Log Out</a>
+                        </div>
+                    </div>
+        
+        
+        
+                </ul>
+        
+            </div>
+        </nav>
+        <!-- /navbar -->

@@ -1,0 +1,40 @@
+<div class="container">
+
+
+
+    <div style="height:630px;" class="mt-5 formpart ">
+        <div class="text-center pt-3">
+            <h5>Create lesson</h5>
+        </div>
+        <div class="row">
+            <div class="uploadresourse-brdr  w-100">
+            </div>
+        </div>
+        <!-- <div  class="alert alert-success" role="alert">
+            Course lesson done!!
+        </div> -->
+        <form  [formGroup]='lessonData' (ngSubmit)="FormDataLesson()">
+            <div class=" my-3">
+                <div class="slectsize col-md-12" >
+                    <select formControlName="courseID" name="courseID" [(ngModel)]='lessonDetails.courseID._id' class="custom-select ">
+                        <option [value]='-1'>select your course</option>
+                        <option *ngFor ='let course of courseList' [value]="course._id">{{course.title}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group pl-3 pr-3">
+                <label for="formGroupExampleInput">lesson title</label>
+                <input [(ngModel)]='lessonDetails.title' formControlName="title" type="text" class="form-control" id="formGroupExampleInput" >
+            </div>
+            <div class="form-group pl-3 pr-3">
+                    <label for="formGroupExampleInput2">lesson description</label>
+                    <div class="containercol-sm-10">
+                        <textarea [(ngModel)]='lessonDetails.desc' formControlName="desc" class="form-control mr-2 pr-5" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>                            
+            </div>
+            <button class="btn btn-info float-right mr-5 mt-5">Submit</button>
+
+        </form>
+        <!-- end form part-->
+    </div>
+</div>

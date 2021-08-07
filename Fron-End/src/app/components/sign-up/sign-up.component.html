@@ -1,0 +1,56 @@
+
+<!-- Register-->
+<section class="register">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6">
+                <form  [formGroup]="signUpForm" (ngSubmit)="signUpForm.valid&&FormData()" class="p-4 mt-5" >
+                    <h2 class="mb-5"> Register</h2>
+                    <div *ngIf ='isMessageSuccess' class="alert alert-success text-center">
+                        {{responseMessage}}
+                    </div>
+                    <div *ngIf ='failResponse && !isMessageSuccess' class="alert alert-danger text-center">{{failResponse}}</div>
+                    <div class="row ">
+                        <div class=" col-md-12 d-flex p-0">
+                            <div class="col-md-6 ">
+                                <input [class.is-valid] ='signUpForm.controls.fname.status == "VALID"' formControlName="fname" class=" form-control " type="text" placeholder="First Name">
+                                <div *ngIf='signUpForm.controls.fname.errors && signUpForm.controls.fname.touched' class="alert alert-danger" role="alert">
+                                    First Name is required
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input [class.is-valid] ='signUpForm.controls.lname.status == "VALID"' class=" form-control " type="text" formControlName="lname" placeholder="Last Name">
+                                <div *ngIf='signUpForm.controls.lname.errors && signUpForm.controls.lname.touched' class="alert alert-danger" role="alert">
+                                    Last Name is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <input [class.is-valid] ='signUpForm.controls.email.status == "VALID"' class=" form-control" type=" email" formControlName="email" placeholder=" Email">
+                    <div *ngIf='signUpForm.controls.email.errors && signUpForm.controls.email.touched' class="alert alert-danger" role="alert">
+                        E-mail is required
+                    </div>
+                    <br>
+                    <input [class.is-valid] ='signUpForm.controls.password.status == "VALID"' class=" form-control" type=" password" formControlName="password" placeholder=" password">
+                    <div *ngIf='signUpForm.controls.password.errors && signUpForm.controls.email.touched' class="alert alert-danger" role="alert">
+                        Password is required
+                    </div>
+                    <br>
+                    <input [class.is-valid] ='signUpForm.controls.confirmPassword.status == "VALID"' class=" form-control" type=" password" formControlName="confirmPassword" placeholder="Confirm Password">
+                    <br>
+                    <div class=" row justify-content-center ">
+                        <button [disabled]="signUpForm.invalid" class="btn text-light"> Register</button>
+                    </div>
+                    <br>
+                    <div class=" m-auto text-center register-back">
+                        <span class=""> I have an account.</span>
+                        <a routerLink='/login'> Log in </a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/Register-->

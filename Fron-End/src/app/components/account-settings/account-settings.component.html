@@ -1,0 +1,115 @@
+<section class="settings">
+
+    <div class="container">
+      <!-- <div *ngIf='accountUpdated' class="alert alert-success" role="alert">
+        account updated !!
+      </div> -->
+      <div *ngIf='passUpdated' class="alert alert-success" role="alert">
+        password updated !!
+      </div>
+      <div *ngIf='imageDeleted' class="alert alert-success" role="alert">
+        image Deleted !!
+      </div>
+      <form [formGroup]="accountDataForm" (ngSubmit)="updateAccount()">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <h5 class="mt-3"> Account Setings</h5>
+                <hr class="bg-info">
+            </div>
+
+            <div *ngIf='imageDeleted' class="col-md-2 mb-3 ">
+
+                <img class=" img-fluid" [src]="imagePrefix+user.image" alt=" insrtuctor-profile">
+            </div>
+            <div *ngIf='!imageDeleted' class="col-md-2 mb-3 ">
+              <i class="fas fa-user-circle icon fa-5x main-colour"></i>
+
+            </div>
+            <div class="col-md-3 mt-5 ">
+                <div class="form-group">
+                  <input  name='image' formControlName="image" (change)='uploadImage($event)' hidden type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+                <button class=" settings-btn  cursorPointer btn1 "><label for="exampleFormControlFile1">Upload new photo</label></button>
+                <button (click)='deleteImage()' class=" settings-btn cursorPointer  btn2"> Remove </button>
+
+            </div>
+
+        </div>
+            <div class="form-row my-5">
+                      <div class="col">
+                        <input [(ngModel)]='user.fname' formControlName="fname" type="text" class="form-control" placeholder="First name">
+                      </div>
+                      <div class="col">
+                        <input [(ngModel)]='user.lname' formControlName="lname" type="text" class="form-control" placeholder="Last name">
+                      </div>
+            </div>
+            <div class="form-group row mb-5 ">
+                  <label for="inputEmail3" class="col-sm-2 font-weight-bold">Email</label>
+                  <div  *ngIf='!emailInput' class="col-md-9">
+                    <input hidden [(ngModel)]='user.email'  formControlName="email" type="text" class="form-control">
+
+                      <p>{{user.email}}</p>
+                  </div>
+                  <div  *ngIf='emailInput' class="col-md-9">
+                      <input [(ngModel)]='user.email'  formControlName="email" type="text" class="form-control">
+                  </div>
+                  <div class=" col-md-1">
+                      <i (click)='emailInputFun()' class="fas fa-pen main-colour cursorPointer ml-5"></i>
+                  </div>
+
+                          <!-- <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="khloudmoh@gmail.com">
+                          </div> -->
+            </div>
+            <hr>
+            <div class="mt-5">
+                    <div class="row  justify-content-between">
+                      <label class="mb-3 col-sm-2 font-weight-bold"> BIO</label>
+                      <i (click)='bioInputFun()' class="fas fa-pen main-colour cursorPointer mr-3"></i>
+                      <textarea hidden [(ngModel)]='user.bio'  formControlName="bio" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                    </div>
+                    <div class="row">
+                      
+                      <div *ngIf='bioInput' class="col-md-12">
+                        <textarea [(ngModel)]='user.bio'  formControlName="bio" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                    </div>
+
+                      <div *ngIf='!bioInput' class="col-md-12">
+                        <p>{{user.bio}}</p>
+                    </div>
+                    </div>
+                    <hr>
+            </div>
+            <div class="form-group row  my-5 justify-content-between">
+                    <label for="inputPassword3" class="col-sm-2 font-weight-bold">Password</label>
+                    <div *ngIf='passwordInput'  class="col-md-9">'
+                      <form [formGroup]="accountPassword" (ngSubmit)="updatePassword()">
+                        <input    formControlName="oldPass" type="password" class="form-control mt-3" placeholder="Enter old password">
+                        <input    formControlName="newPass" type="password" class="form-control mt-3" placeholder="Enter new password">
+                        <input    formControlName="reNewPass" type="password" class="form-control mt-3" placeholder="Confirm new password">
+                        <button class="btn bg-mainColor text-white float-right mr-3 mt-5 my-5">Submit</button>
+
+                      </form>
+                    </div>
+                    <div *ngIf='!passwordInput'  class="col-md-9">
+                        <p>****************</p>
+                    </div>
+                    <div class=" col-md-1">
+
+                      <i (click)='passInputFun()' class="fas fa-pen main-colour cursorPointer ml-5"></i>
+                    </div>
+
+            </div>
+            <button class="btn bg-mainColor text-white float-right mr-3 mt-5 my-5">Submit</button>
+        </form>
+        <hr>
+
+    </div>
+
+
+
+</section>

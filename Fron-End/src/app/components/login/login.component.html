@@ -1,0 +1,37 @@
+
+    <!-- log in-->
+    <section class="log-in">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-5">
+
+                    <form [formGroup]='signInForm' (ngSubmit)='signInForm.valid && signInData()' class="p-5 ">
+                        <h2 class="mb-5"> Log in </h2>
+                        <div *ngIf='inValidData' class="alert alert-danger" role="alert">
+                            invalid data                        
+                        </div>
+                        <div *ngIf='plsConfirmEmail' class="alert alert-danger" role="alert">
+                            please confirm your email first
+                        </div>
+                        <input formControlName='email' [class.is-valid] ='signInForm.controls.email.status == "VALID"' class=" form-control " type="email" placeholder="Email address">
+                        <div *ngIf='signInForm.controls.email.errors && signInForm.controls.email.touched && emailNotValid' class="alert alert-danger">Email Not Valid</div>
+                        <br>
+                        <input formControlName='password' [class.is-valid] ='signInForm.controls.password.status == "VALID"' class=" form-control" type="password" placeholder="Password">
+                        <div *ngIf='signInForm.controls.password.errors && signInForm.controls.password.touched && passNotValid' class="alert alert-danger">Password Not Valid</div>
+                        <br>
+                        <div class=" row justify-content-center ">
+                            <button type="submit" class="btn text-light"> log in </button>
+                        </div>
+                        <br>
+                        <div class="  text-center m-auto">
+                            <span> Forgot password? </span>
+                            <div class="log-content bg-transparent">
+                            </div>
+                            <a routerLink='/signup'> Not a member yet ? </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/log in-->

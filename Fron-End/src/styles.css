@@ -1,0 +1,557 @@
+/*start home page*/
+body{
+
+    color: #2E3D49;
+position: relative;
+}
+
+.btnIndex{
+    width: 120px;
+    height: 40px;
+    border-radius:16px;
+    border: none;
+    background-color: #58A8AB;
+    padding: 5px;
+    font-weight:600;
+}
+.line{
+    width:33px;
+    height: 3px;
+    background-color: #58A8AB;
+   margin-left: 20px;
+}
+.btn-home{
+
+    margin-top: 40px;
+}
+.main-colour{
+    color: #58A8AB;
+}
+.navbar-brand{
+    color: #58A8AB !important;
+    font-size:1.5rem;
+    font-weight:550;
+}
+
+.fontChange h1{
+font-size:2.8rem;
+}
+.nav-link{
+    font-size:1.2rem;
+
+}
+.nav-item{
+    padding-right:30;
+    font-weight:550;
+    }
+/*end home page*/
+
+/*start recent page*/
+    .img-overlay{
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        background-color:#f3efef;
+        width: 255px;
+
+    }
+.img-fluid{
+    height: 200px;
+    width: 100%;
+}
+
+    .instuctor-img-overlay{
+
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        background-color:#f3efef;
+        width: 300px;
+
+
+    }
+    .img-overlay p{
+        font-weight: bold;
+    }
+
+    .img-overlay span{
+        font-weight: 400;
+    }
+
+    .recent-brdr{
+        width: 100px;
+        height: 3px;
+        background-color:#58A8AB;
+        margin:auto;
+        margin-top: 13px;
+    }
+
+    .recent h2{
+        font-weight: 700;
+    }
+    .recent p{
+        font-weight: bold;
+    }
+    .recent span{
+        font-weight: 100;
+    }
+/*end recent page*/
+
+
+/*start login page*/
+
+.log-in h2{
+    font-weight:700;
+}
+
+form .btn {
+    background-color:#58A8AB ;
+    width: 150px;
+    height: 40px;
+    border-radius: 11px;
+    text-align: center;
+    margin-right:px;
+font-weight:600;
+
+}
+.log-in form{
+    width: 450;
+height: 450;
+
+    border-radius: 15px;
+    border:2px  solid rgb(230, 235, 236) ;
+    margin-top: 80px;
+    margin-right:400;
+    box-shadow: 10px 10px 8px #888888 ;
+}
+.log-in input{
+    border-radius: 10px;
+}
+.log-content{
+    width: 30px;
+    height: 3px;
+    display: inline-block;
+font-weight:300;
+}
+
+
+/*end login page*/
+
+
+
+/*start rigister page*/
+.register h2{
+    font-weight:700;
+}
+
+.register form{
+    border-radius: 15px;
+    border:2px  solid rgb(230, 235, 236) ;
+    margin-top: 80px;
+    box-shadow: 10px 10px 8px #888888 ;
+}
+
+.register input{
+    border-radius: 10px;
+}
+
+.register-content{
+    width: 30px;
+    height: 3px;
+    display: inline-block;
+    font-weight:400;
+}
+.register-back a {
+    color:#58A8AB  ;
+}
+.register-back span {
+    font-weight: 800;
+}
+
+
+/*end rigister page*/
+
+
+/*start search page*/
+
+
+nav .icon{
+    margin-top: 4px;
+    font-size: 40px;
+    color: #58A8AB;
+    margin: auto;
+}
+
+nav .search-icon{
+    margin-top: 11px;
+    color: #58A8AB;
+    font-size: 14px;
+}
+.search img{
+
+    width: 400px;
+    height: 230px;
+}
+
+.search .img-overlay{
+
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color:#f3efef;
+
+    width: 350px;
+}
+
+nav form input{
+    width:400px;
+    padding:4px;
+    border-radius: 14px;
+    border: none;
+    background-color:transparent
+
+}
+
+.innner{
+    background-color:#f3efef;
+    border-radius: 14px;
+
+}
+
+.innner i{
+    color: #58A8AB;
+}
+
+
+
+/*end search page*/
+
+
+/*start upload resourse     and courselanding*/
+
+
+.upload-icon{
+
+    color: #58A8AB;
+    font-size: 40px;
+}
+.upload-brdr{
+width: 100px;
+height: 2px;
+background-color:#58A8AB;
+margin-left:15px;
+margin-top: -15px;
+}
+
+.nav-pills .nav-link.active{
+background-color:#58A8AB;
+
+}
+.nav-pills a{
+color:black;
+}
+
+.formpart{
+
+    background-color:#f3efef;
+    height: 100%;
+    padding-bottom: 50px;
+
+}
+.nav-pills .btn{
+border:none;
+background-color:#58A8AB;
+width:250px;
+height: 45;
+margin-left:30;
+margin-top:110px;
+
+}
+.uploadresourse-brdr{
+    width: 800px;
+    height: 2px;
+
+    background-color:white;
+    margin-bottom:2;
+
+
+}
+.btn-default.btn-choose{
+border-radius:0;
+color:#58A8AB;
+background-color:white;
+font-weight:400;
+width: 120;
+height: 37;
+}
+
+/*end upload resourse   course  landing*/
+
+
+/*start curriculum page*/
+.whiteBox{
+width:600px;
+height: 85px;
+margin:auto;
+background-color:white;
+}
+
+.fileNamepart{
+background-color:#f3efef;
+margin: auto;
+}
+
+/*end curriculum page*/
+
+
+
+/*start curriculum2 page*/
+.whiteBox2{
+    width:600;
+    height: 150;
+    margin:auto;
+    background-color:white;
+position: relative;
+    }
+.iconInputPart{
+position:absolute;
+top: 15;
+bottom:15;
+left:25;
+width: 550;
+height: 120;
+background-color:#f3efef;
+
+}
+.slectsize{
+width: 600;
+
+
+}
+.inputopicity{
+    background-color:#f3efef;
+width: 300;
+
+
+}
+
+
+
+/*end curriculum2 page*/
+
+
+/*start content page*/
+.content-image img{
+    width: 360px;
+    height: 175px;
+}
+.content-item .btn{
+
+    color: white;
+    background-color:#58A8AB ;
+    padding: 4px;
+    margin-bottom: 10px;
+    border-radius: 0px;
+    font-weight:bold ;
+    margin-left: 300px;
+    width:150px;
+    margin-top: 9px;
+}
+
+.profile-item-item{
+    background-color:#f3efef;
+
+    margin-top: 25px;
+}
+
+.profile-item-item img{
+    border-radius: 75px;
+    margin-left:100px;
+    margin-top: 20px;
+}
+
+
+/*end content page*/
+
+/*start permission page*/
+
+.content-img-overlay{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    top: 0;
+    background-color:black;
+    opacity: 0.7;
+
+}
+
+.permision-over-lay{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    top: 0;
+}
+
+.permision-content{
+    width: 420px;
+    height: 180px;
+
+    background-color:#f3efef;
+
+    border-radius: 10px;
+}
+
+.permision-brdr span {
+    width: 250px;
+    height: 7px;
+}
+
+.premision-btn .btn{
+
+    width: 75px;
+    height: 35px;
+    background-color:#58A8AB ;
+    text-align: center;
+    color: white;
+}
+ .profile-item-item{
+height: 150;
+ }
+
+
+/*end permission page*/
+
+/*start show page*/
+.show-content {
+    width: 1200px;
+    height: 215px;
+    background-color:#f3efef;
+    margin-top: 25px;
+}
+
+.show-content2{
+    width: 1200px;
+    height: 150px;
+    background-color:#f3efef;
+    margin-top: 90px;
+}
+
+.show h6{
+    font-weight: bold;
+}
+
+.show-content2 i{
+    font-size: 50px;
+    color: #58A8AB;
+    margin-top: 40px;
+    margin-left: 120px;
+
+}
+
+.show-content2 h6{
+    margin-right:150px;
+}
+
+.show-icon{
+    color:#58A8AB ;
+    margin-top: px;
+    font-size: 40;
+
+}
+
+.show-content2 .show-icon2 {
+
+    color:#58A8AB ;
+    margin-top: 0px;
+
+}
+
+.show-brdr{
+
+    width: 440px;
+    height: 1px;
+    background-color:#58A8AB ;
+    margin-left: 10px;
+
+
+}
+/*end show page*/
+
+/*start setting page*/
+.settings img{
+
+    width: 110px;
+    height: 110px;
+    border-radius: 55px;
+
+}
+
+
+
+
+/*end setting page*/
+
+/*start instructor page*/
+/* .profile{
+    background-color:#f3efef;
+
+} */
+.bg-mainColor{
+    background-color:#58A8AB;
+
+}
+.profile-item img{
+   width: 150px;
+   height: 150px;
+   border-radius: 75px;
+   margin-left:35px;
+
+}
+
+.profile-item h5{
+   font-weight: bold;
+
+}
+
+.profile-item3 img{
+   width: 300px;
+   height: 225px;
+
+}
+
+.profile-item4 .btn{
+   color: white;
+   background-color:#58A8AB ;
+   padding: 15px;
+   margin-bottom: 15px;
+   border-radius: 0px;
+   font-weight:bold ;
+   margin-right: 80px;
+}
+.instuctor-img-overlay{
+    background-color: #e6e0e0;
+}
+
+
+/*end instructor page*/
+input.transparent-input{
+    background-color:rgba(0,0,0,0) !important;
+    border:none !important;
+}
+.borderMainColor{
+    border: solid 2px #58A8AB !important;
+}
+.cursorPointer{
+    cursor: pointer;
+}
+a{
+    color: #58A8AB;
+}
+.settings-btn label{
+    margin-bottom: 0;
+}

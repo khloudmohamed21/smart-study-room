@@ -1,0 +1,267 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-4">
+            <div class="nav flex-column nav-pills mt-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active mt-2" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Outline your course</a>
+                <!-- <a class="nav-link mt-2" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a> -->
+                <a class="nav-link mt-2" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Domain</a>
+                <!-- <p class="nav-link mt-3">Create your course</p>
+                <div class="upload-brdr"></div> -->
+                <a class="nav-link mt-2" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Create course</a>
+                <a class="nav-link mt-2" id="v-pills-lesson-tab" data-toggle="pill" href="#v-pills-lesson" role="tab" aria-controls="v-pills-lessom" aria-selected="false">Create lesson</a>
+                <a class="nav-link mt-2" id="v-pills-curriculum-tab" data-toggle="pill" href="#v-pills-curriculum" role="tab" aria-controls="v-pills-curriculum" aria-selected="false">Upload resource</a>
+                <!-- <button class="btn btn-danger text-light  py-3">Submit for reviwe</button> -->
+
+            </div>
+        </div>
+
+
+        <div class="col-8">
+            <div class="tab-content" id="v-pills-tabContent">
+
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <!-- start form part-->
+                    <div style="min-height:630px;" class="mt-5 formpart ">
+                        <div class="text-center pt-3">
+                            <h5>Outline your course</h5>
+                        </div>
+                        <div class="row">
+                            <div class="uploadresourse-brdr">
+                            </div>
+                        </div>
+                        <div class="container-fluid mt-3">              
+                        <p>
+                            To complete the upload process efficiently, effectively and successfully, it is necessary to be fully aware of how to upload contents and to differentiate between terms. 
+                            " domain , course , lesson , resource " And full knowledge of them to be taken advantage of to the fullest.
+                        </p>
+                        <br>
+                        <div>
+                            <p>
+                                <strong>
+                                Notes and steps that must be followed to take note of the lifting process and everything related to it: 
+
+                                </strong>
+                            </p>
+                            - First select the field you want to talk about and upload contents in it.
+                            <br>
+                            <br>
+                            - The domain being identified has a clear learning objective.
+                            <br>
+                            <br>
+                            - Each "domain" contains a set of courses.
+                            <br>
+                            <br>
+                            - Each course contains full educational content (full play list). 
+                            <br>
+                            <br>
+                            - Each course has a set of lessons.
+                            <br>
+                            <br>
+                            - Each lesson contains a specific content that aims to communicate a specific goal related to the course material.
+                            <br>
+                            <br>
+                            - Each lesson contains a set of resources from "pdf, power point...", which help in the achievement and comprehension of the scientific material and the arrangement of the information well.
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        <div style="height:630px;" class="mt-5 formpart ">
+                            <div class="text-center pt-3">
+                                <h5>Domain</h5>
+                            </div>
+                            <div class="row">
+                                <div class="uploadresourse-brdr">
+                                </div>
+                            </div>
+                            <div *ngIf='addDomainDone' class="alert alert-success" role="alert">
+                                Domain added done!!
+                            </div>
+                            <form  [formGroup]='uploadDomain' (ngSubmit)="FormDataDomain()">
+
+                                <div class="form-group pl-3 pr-3">
+
+                                    <label for="formGroupExampleInput">Domain title</label>
+                                    <input formControlName="title" type="text" class="form-control" id="formGroupExampleInput" >
+                                </div>
+                                <div class="form-group pl-3 pr-3">
+                                    <label for="formGroupExampleInput2">Domain description</label>
+                                    <div class="containercol-sm-10">
+                                        <textarea formControlName="desc" class="form-control mr-2 pr-5" id="formGroupExampleInput2" rows="3"></textarea>
+                                    </div> 
+                                    <!-- <input formControlName="desc" type="text" class="form-control" id="formGroupExampleInput2" > -->
+                                </div>
+
+                                <button class="btn btn-info float-right mr-5 mt-5">Submit</button>
+    
+                            </form>
+                            <!-- end form part-->
+                        </div>
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <div style="height:630px;" class="mt-5 formpart ">
+                        <div class="text-center pt-3">
+                            <h5>Create course</h5>
+                        </div>
+                        <div class="row">
+                            <div class="uploadresourse-brdr">
+                            </div>
+                        </div>
+                        <div *ngIf='addDomainDone' class="alert alert-success" role="alert">
+                            Course added done!!
+                        </div>
+                        <form  [formGroup]='uploadCourse' (ngSubmit)="FormDataCourse()">
+                            <div class=" my-3">
+                                <div class="slectsize col-md-12" >
+                                    <select formControlName="domainID" name="domainID" [(ngModel)]='defultValueOfDomain' class="custom-select ">
+                                        <option [value]='-1'>select your domain</option>
+                                        <option *ngFor ='let domain of domainList' [value]="domain._id">{{domain.title}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group pl-3 pr-3">
+                                <label for="formGroupExampleInput">Course title</label>
+                                <input formControlName="title" type="text" class="form-control" id="formGroupExampleInput" >
+                            </div>
+                            <div class="form-group pl-3 pr-3">
+                                <label for="formGroupExampleInput2">Course description</label>
+                                <div class="containercol-sm-10">
+                                    <textarea formControlName="desc" class="form-control mr-2 pr-5" id="formGroupExampleInput2" rows="3"></textarea>
+                                </div>  
+                                <!-- <input formControlName="desc" type="text" class="form-control" id="formGroupExampleInput2" > -->
+                            </div>
+                            <div class="form-group pl-3 pr-3">
+                                <input hidden [(ngModel)]='decoded.user_id'  formControlName="userID" name="userID" type="text" class="form-control" id="formGroupExampleInput2" >
+                                    <label for="formGroupExampleInput2">Objective</label>
+                                    <div class="containercol-sm-10">
+                                        <textarea formControlName="Objective" class="form-control mr-2 pr-5" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>                            
+                            </div>
+                            <button class="btn btn-info float-right mr-5 mt-5">Submit</button>
+
+                        </form>
+                        <!-- end form part-->
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-lesson" role="tabpanel" aria-labelledby="v-pills-lesson-tab">
+                    <div style="height:630px;" class="mt-5 formpart ">
+                        <div class="text-center pt-3">
+                            <h5>Create lesson</h5>
+                        </div>
+                        <div class="row">
+                            <div class="uploadresourse-brdr">
+                            </div>
+                        </div>
+                        <div *ngIf='addLessonDone' class="alert alert-success" role="alert">
+                            lesson done!!
+                        </div>
+                        <form  [formGroup]='lessonData' (ngSubmit)="FormDataLesson()">
+                            <div class=" my-3">
+                                <div class="slectsize col-md-12" >
+                                    <select formControlName="courseID" name="courseID" [(ngModel)]='defultValueOfCourse' class="custom-select ">
+                                        <option [value]='-1'>select your course</option>
+                                        <option *ngFor ='let course of courseList' [value]="course._id">{{course.title}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group pl-3 pr-3">
+                                <label for="formGroupExampleInput">lesson title</label>
+                                <input formControlName="title" type="text" class="form-control" id="formGroupExampleInput" >
+                                <input hidden [(ngModel)]='decoded.user_id' formControlName="userID" type="text" class="form-control" id="formGroupExampleInput" >
+                            </div>
+                            <div class="form-group pl-3 pr-3">
+                                    <label for="formGroupExampleInput2">lesson description</label>
+                                    <div class="containercol-sm-10">
+                                        <textarea formControlName="desc" class="form-control mr-2 pr-5" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>                            
+                            </div>
+                            <button class="btn btn-info float-right mr-5 mt-5">Submit</button>
+
+                        </form>
+                        <!-- end form part-->
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="v-pills-curriculum" role="tabpanel" aria-labelledby="v-pills-curriculum-tab">
+                    
+                    <!-- start form part-->
+                    <div  style="height:750px;"  class=" mt-5 formpart ">
+                        <div class="text-center pt-3">
+                            <h5>Upload resourse </h5>
+                        </div>
+
+                            <div *ngIf='uploadResourseDone' class="alert alert-success" role="alert">
+                                Resourse uploaded done!!
+                            </div>
+                        <form  [formGroup]='uploadresourse' (ngSubmit)="FormData()">
+                            <div class="row">
+                                <div class="uploadresourse-brdr">
+                                </div>
+                                <div class="container mt-3">
+                                    <div class="slectsize col-md-12" >
+                                        <select (change)='domainChange($event)' formControlName="domainID" name="domainID" [(ngModel)]='defultValueOfDomain' class="custom-select ">
+                                            <option disabled [value]='-1'>select your domain</option>
+                                            <option *ngFor ='let domain of domainList' [value]="domain._id">{{domain.title}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                        
+                                <div class="container my-3">
+                                    <div class="slectsize col-md-12" >
+                                        <select (change)='courseChange($event)' formControlName="courseID" name="course" [(ngModel)]='defultValueOfCourse' class="custom-select ">
+                                            <option disabled [value]='-1'>select your course</option>
+                                            <option *ngFor ='let course of courseListOfDomainID' [value]="course._id">{{course.title}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="container mb-3">
+                                    <div class="slectsize col-md-12" >
+                                        <select  formControlName="lessonID" name="lessonID" [(ngModel)]='defultValueOfLesson' class="custom-select ">
+                                            <option  [value]='-1'>select your lesson</option>
+                                            <option  *ngFor ='let lesson of lessonListOfDomainID' [value]="lesson._id">{{lesson.title}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group pl-3 pr-3">
+                                <label for="formGroupExampleInput">Resourse title</label>
+                                <input formControlName="title" type="text" class="form-control" id="formGroupExampleInput" >
+                            </div>
+                            <div class="form-group pl-3 pr-3">
+                                <label for="inputPassword" class=" col-form-label">keywords:</label>
+                                <input formControlName="keywords" class="form-control" type="text" >  
+                            </div>
+                            <div class="form-group pl-3 pr-3">
+                                <label for="formGroupExampleInput2">Resourse description</label>
+                                <div class="containercol-sm-10">
+                                    <textarea formControlName="desc" class="form-control mr-2 pr-5" id="formGroupExampleInput2" rows="3"></textarea>
+                                </div>  
+                                <!-- <input formControlName="desc" type="text" class="form-control" id="formGroupExampleInput2" > -->
+                            </div>
+                            <div class="form-group pl-3 pr-3">
+                                <label for="formGroupExampleInput2">Upload resourse</label>
+                                <input name='resource'  formControlName="resource" (change)='uploadresource($event)' type="file"  class="form-control" id="formGroupExampleInput2" />
+                            </div>
+
+      
+
+                    <button class="btn btn-info float-right mr-3 mt-5">Submit</button>
+
+                    </form>
+                    <!-- end form part-->
+                    </div>
+
+                    <!-- start form part-->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
